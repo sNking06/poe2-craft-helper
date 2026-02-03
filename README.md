@@ -2,15 +2,24 @@
 
 Guide de crafting intelligent pour **Path of Exile 2** - Outil web communautaire pour aider votre guilde à crafter efficacement.
 
+[![GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-success?style=for-the-badge&logo=github)](https://snking06.github.io/poe2-craft-helper/)
 ![PoE2](https://img.shields.io/badge/Path%20of%20Exile-2-gold?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-2.1.0-blue?style=for-the-badge)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+## 🌐 Accès Rapide
+
+**🚀 Utilise l'application en ligne :** [https://snking06.github.io/poe2-craft-helper/](https://snking06.github.io/poe2-craft-helper/)
+
+Aucune installation nécessaire - ouvre directement dans ton navigateur !
+
 ---
 
-## 🎯 Fonctionnalités
+## 🎯 Fonctionnalités v2.1
 
+### 🔨 Guide de Crafting
 ✅ **Analyse Intelligente** - Analyse automatique de vos objectifs de craft
 ✅ **Stratégies Optimisées** - Recommandations basées sur budget, difficulté et RNG
 ✅ **Estimations de Coûts** - Calculs réalistes (optimiste/moyen/pessimiste)
@@ -18,7 +27,24 @@ Guide de crafting intelligent pour **Path of Exile 2** - Outil web communautaire
 ✅ **Plan B** - Alternatives en cas d'échec
 ✅ **Conseils d'Expert** - Tips d'optimisation économique et temporelle
 ✅ **Export/Partage** - Exportez vos guides en texte ou partagez via lien
-✅ **UI Immersive** - Interface dark/gold inspirée de Path of Exile
+
+### 🎮 Simulateur Interactif (NOUVEAU !)
+✅ **Craft en Temps Réel** - Simulez vos crafts avec RNG réaliste
+✅ **Orbs Interactifs** - Cliquez sur les icônes pour utiliser les currency
+✅ **Auto-Simulation** - Testez 10, 100 ou 1000 crafts automatiquement
+✅ **Statistiques Détaillées** - Taux de succès, coûts moyens, graphiques
+
+### 📊 Outils Avancés
+✅ **Comparateur de Stratégies** - Comparez toutes les méthodes en un clic
+✅ **Graphiques Chart.js** - Visualisez vos coûts et statistiques
+✅ **Système de Favoris** - Sauvegardez vos crafts préférés (localStorage)
+✅ **Historique Complet** - Suivez vos 50 derniers crafts
+
+### 🎨 Interface
+✅ **Mode Dark/Light** - Toggle avec sauvegarde de préférence
+✅ **Icônes Currency SVG** - 15+ orbs avec animations authentiques
+✅ **UI Immersive** - Thème PoE dark/gold
+✅ **100% Responsive** - Fonctionne sur mobile, tablette, desktop
 
 ---
 
