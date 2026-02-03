@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoE2 Craft Helper - Guide de Crafting Intelligent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/currency-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <span class="logo-icon">⚔️</span>
+                PoE2 Craft Helper
+            </h1>
+            <p class="tagline">Guide de Crafting Intelligent pour Path of Exile 2</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Section de saisie -->
+        <section class="craft-input-section">
+            <div class="section-header">
+                <h2>🎯 Définir votre Objectif de Craft</h2>
+                <p>Remplissez les informations ci-dessous pour obtenir un guide détaillé</p>
+            </div>
+
+            <form id="craftForm" class="craft-form">
+                <div class="form-grid">
+                    <!-- Type d'objet -->
+                    <div class="form-group">
+                        <label for="itemType">Type d'Objet</label>
+                        <select id="itemType" name="itemType" required>
+                            <option value="">-- Sélectionner --</option>
+                            <optgroup label="⚔️ Armes">
+                                <option value="weapon-1h">Arme 1 Main</option>
+                                <option value="weapon-2h">Arme 2 Mains</option>
+                                <option value="bow">Arc</option>
+                                <option value="crossbow">Arbalète</option>
+                                <option value="wand">Baguette</option>
+                                <option value="staff">Bâton</option>
+                            </optgroup>
+                            <optgroup label="🛡️ Armures">
+                                <option value="helmet">Casque</option>
+                                <option value="body">Armure</option>
+                                <option value="gloves">Gants</option>
+                                <option value="boots">Bottes</option>
+                                <option value="shield">Bouclier</option>
+                            </optgroup>
+                            <optgroup label="💍 Bijoux">
+                                <option value="ring">Anneau</option>
+                                <option value="amulet">Amulette</option>
+                                <option value="belt">Ceinture</option>
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <!-- Base Item -->
+                    <div class="form-group">
+                        <label for="baseItem">Base Item</label>
+                        <input type="text" id="baseItem" name="baseItem"
+                               placeholder="Ex: Regal Sceptre, Gladiator Plate"
+                               list="baseItemList">
+                        <datalist id="baseItemList"></datalist>
+                    </div>
+
+                    <!-- Item Level -->
+                    <div class="form-group">
+                        <label for="itemLevel">Item Level (ilvl)</label>
+                        <input type="number" id="itemLevel" name="itemLevel"
+                               min="1" max="100" value="75" required>
+                        <small>Les mods disponibles dépendent de l'ilvl</small>
+                    </div>
+
+                    <!-- Budget -->
+                    <div class="form-group">
+                        <label for="budget">Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="low">Limité (< 50 chaos)</option>
+                            <option value="medium" selected>Moyen (50-500 chaos)</option>
+                            <option value="high">Élevé (500+ chaos)</option>
+                            <option value="unlimited">Illimité</option>
+                        </select>
+                    </div>
+
+                    <!-- Contexte -->
+                    <div class="form-group">
+                        <label for="context">Contexte</label>
+                        <select id="context" name="context">
+                            <option value="early">Early Game</option>
+                            <option value="mid" selected>Mid Game</option>
+                            <option value="endgame">End Game</option>
+                        </select>
+                    </div>
+
+                    <!-- Trade autorisé -->
+                    <div class="form-group">
+                        <label for="tradeAllowed">
+                            <input type="checkbox" id="tradeAllowed" name="tradeAllowed" checked>
+                            Trade autorisé
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Mods souhaités -->
+                <div class="form-section">
+                    <h3>🎲 Mods Souhaités</h3>
+                    <div id="modsContainer" class="mods-container">
+                        <div class="mod-input-group">
+                            <input type="text" class="mod-input" placeholder="Ex: +2 to Level of Chaos Gems" list="modsList">
+                            <select class="mod-priority">
+                                <option value="required">Obligatoire</option>
+                                <option value="desired">Souhaité</option>
+                                <option value="optional">Optionnel</option>
+                            </select>
+                            <select class="mod-tier">
+                                <option value="any">Any Tier</option>
+                                <option value="t1">T1</option>
+                                <option value="t2">T2</option>
+                                <option value="t3">T3</option>
+                            </select>
+                            <button type="button" class="btn-remove-mod">✕</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addModBtn" class="btn-secondary">+ Ajouter un Mod</button>
+                    <datalist id="modsList"></datalist>
+                </div>
+
+                <!-- Bouton de soumission -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        🔨 Générer le Guide de Craft
+                    </button>
+                    <button type="reset" class="btn-secondary">Réinitialiser</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Section de résultat (cachée par défaut) -->
+        <section id="craftResult" class="craft-result-section hidden">
+            <div class="section-header">
+                <h2>📋 Guide de Craft Personnalisé</h2>
+            </div>
+
+            <div class="result-content">
+                <!-- Résumé -->
+                <div class="result-card summary-card">
+                    <h3>📊 Résumé</h3>
+                    <div id="summaryContent"></div>
+                </div>
+
+                <!-- Stratégie principale -->
+                <div class="result-card strategy-card">
+                    <h3>✅ Stratégie Principale</h3>
+                    <div id="strategyContent" class="strategy-steps"></div>
+                </div>
+
+                <!-- Estimation des coûts -->
+                <div class="result-card cost-card">
+                    <h3>💰 Estimation des Coûts</h3>
+                    <div id="costContent"></div>
+                </div>
+
+                <!-- Risques -->
+                <div class="result-card risk-card">
+                    <h3>⚠️ Risques</h3>
+                    <div id="riskContent"></div>
+                </div>
+
+                <!-- Plan B -->
+                <div class="result-card planb-card">
+                    <h3>🔁 Plan B</h3>
+                    <div id="planbContent"></div>
+                </div>
+
+                <!-- Conseils d'optimisation -->
+                <div class="result-card tips-card">
+                    <h3>🧩 Conseils d'Optimisation</h3>
+                    <div id="tipsContent"></div>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button id="exportBtn" class="btn-secondary">📄 Exporter en texte</button>
+                <button id="shareBtn" class="btn-secondary">🔗 Copier le lien</button>
+                <button id="newCraftBtn" class="btn-primary">Nouveau Craft</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>PoE2 Craft Helper - Outil communautaire non officiel</p>
+            <p>Path of Exile 2 © Grinding Gear Games</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/crafting-engine.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/theme-manager.js"></script>
+</body>
+</html>

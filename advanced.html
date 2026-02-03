@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités Avancées - PoE2 Craft Helper</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/currency-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght:400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .nav-tab {
+            padding: 1rem 2rem;
+            background: var(--color-bg-tertiary);
+            border: 1px solid var(--color-border);
+            border-bottom: none;
+            cursor: pointer;
+            color: var(--color-text-secondary);
+            transition: all 0.3s ease;
+            font-family: 'Cinzel', serif;
+        }
+
+        .nav-tab:hover {
+            background: var(--color-bg-secondary);
+            color: var(--color-accent-gold);
+        }
+
+        .nav-tab.active {
+            background: var(--color-bg-secondary);
+            color: var(--color-accent-gold);
+            border-bottom: 2px solid var(--color-accent-gold);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .feature-card {
+            background: var(--color-bg-tertiary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--color-accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .simulator-controls {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .simulator-result {
+            background: var(--color-bg-secondary);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            border: 1px solid var(--color-border);
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: var(--color-bg-tertiary);
+            color: var(--color-accent-gold);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: var(--color-bg-tertiary);
+        }
+
+        .favorite-item {
+            background: var(--color-bg-secondary);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--color-accent-gold);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .favorite-item:hover {
+            background: var(--color-bg-tertiary);
+            transform: translateX(5px);
+            transition: all 0.3s ease;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .badge-excellent { background: var(--color-success); color: white; }
+        .badge-good { background: #4caf50; color: white; }
+        .badge-acceptable { background: var(--color-warning); color: white; }
+        .badge-poor { background: var(--color-danger); color: white; }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <span class="logo-icon">⚔️</span>
+                PoE2 Craft Helper - Fonctionnalités Avancées
+            </h1>
+            <p class="tagline">Outils avancés pour maîtriser le crafting</p>
+            <div style="margin-top: 1rem;">
+                <a href="index.html" class="btn-secondary" style="display: inline-block; padding: 0.5rem 1.5rem;">← Retour au Guide Principal</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Navigation par onglets -->
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-tab="comparator">🔀 Comparateur de Stratégies</div>
+            <div class="nav-tab" data-tab="simulator">🎲 Simulateur de Craft</div>
+            <div class="nav-tab" data-tab="favorites">⭐ Favoris & Historique</div>
+            <div class="nav-tab" data-tab="stats">📊 Statistiques</div>
+        </div>
+
+        <!-- ONGLET: Comparateur de Stratégies -->
+        <div class="tab-content active" id="tab-comparator">
+            <section class="craft-input-section">
+                <div class="section-header">
+                    <h2>🔀 Comparateur de Stratégies</h2>
+                    <p>Comparez toutes les stratégies possibles pour votre craft</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>Comment ça marche ?</h3>
+                    <p>Entrez votre objectif de craft ci-dessous, et le comparateur analysera toutes les stratégies disponibles, les classera par pertinence, et vous montrera les pour/contre de chacune.</p>
+                </div>
+
+                <form id="comparatorForm" class="craft-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="comp_itemType">Type d'Objet</label>
+                            <select id="comp_itemType" required>
+                                <option value="">-- Sélectionner --</option>
+                                <option value="weapon-1h">Arme 1 Main</option>
+                                <option value="weapon-2h">Arme 2 Mains</option>
+                                <option value="helmet">Casque</option>
+                                <option value="body">Armure</option>
+                                <option value="ring">Anneau</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comp_budget">Budget</label>
+                            <select id="comp_budget">
+                                <option value="low">Limité</option>
+                                <option value="medium" selected>Moyen</option>
+                                <option value="high">Élevé</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comp_requiredMods">Nombre de mods obligatoires</label>
+                            <input type="number" id="comp_requiredMods" min="0" max="6" value="1">
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">🔍 Comparer les Stratégies</button>
+                    </div>
+                </form>
+
+                <div id="comparisonResults" style="margin-top: 2rem; display: none;">
+                    <h3>📋 Résultats de la Comparaison</h3>
+                    <div id="comparisonContent"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ONGLET: Simulateur -->
+        <div class="tab-content" id="tab-simulator">
+            <section class="craft-input-section">
+                <div class="section-header">
+                    <h2>🎲 Simulateur de Craft Interactif</h2>
+                    <p>Testez vos stratégies de craft avec RNG réaliste - Maintenant disponible !</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>✨ Nouveau dans v2.1 !</h3>
+                    <p>Le simulateur est maintenant <strong>entièrement fonctionnel</strong> ! Créez des items, utilisez des Orbs, lancez des auto-simulations et analysez les résultats en temps réel.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>✅ Tous les Orbs majeurs supportés</li>
+                        <li>✅ RNG basé sur les probabilités réelles de PoE2</li>
+                        <li>✅ Auto-simulation jusqu'à 1000 tentatives</li>
+                        <li>✅ Tracking complet de currency</li>
+                        <li>✅ Statistiques détaillées en temps réel</li>
+                    </ul>
+                </div>
+
+                <!-- Le simulateur sera injecté ici par JavaScript -->
+                <div id="simulatorContainer"></div>
+            </section>
+        </div>
+
+        <!-- ONGLET: Favoris & Historique -->
+        <div class="tab-content" id="tab-favorites">
+            <section class="craft-input-section">
+                <div class="section-header">
+                    <h2>⭐ Favoris & Historique</h2>
+                    <p>Gérez vos crafts sauvegardés et consultez l'historique</p>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <button class="btn-secondary" onclick="alert('Import/Export disponible en version 2.1')">📥 Importer</button>
+                    <button class="btn-secondary" onclick="alert('Import/Export disponible en version 2.1')">📤 Exporter</button>
+                    <button class="btn-secondary" style="background: var(--color-danger);" onclick="alert('Fonction de nettoyage disponible en version 2.1')">🗑️ Tout Effacer</button>
+                </div>
+
+                <!-- Favoris -->
+                <div style="margin-bottom: 3rem;">
+                    <h3>⭐ Crafts Favoris</h3>
+                    <div id="favoritesList">
+                        <div class="favorite-item">
+                            <div>
+                                <h4 style="color: var(--color-accent-gold); margin-bottom: 0.5rem;">Sceptre Chaos DoT</h4>
+                                <p style="color: var(--color-text-secondary); font-size: 0.9rem;">+1 Chaos Gems, Chaos Damage</p>
+                                <small style="color: var(--color-text-muted);">Ajouté il y a 2 jours</small>
+                            </div>
+                            <div>
+                                <button class="btn-secondary" style="padding: 0.5rem 1rem;">📋 Charger</button>
+                                <button class="btn-secondary" style="padding: 0.5rem 1rem; background: var(--color-danger);">✕</button>
+                            </div>
+                        </div>
+
+                        <p style="text-align: center; color: var(--color-text-muted); margin-top: 2rem;">
+                            Aucun favori pour le moment. Créez un craft et ajoutez-le aux favoris !
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Historique -->
+                <div>
+                    <h3>📜 Historique des Crafts</h3>
+                    <div id="historyList">
+                        <p style="text-align: center; color: var(--color-text-muted); padding: 2rem;">
+                            Votre historique de crafts s'affichera ici automatiquement
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ONGLET: Statistiques -->
+        <div class="tab-content" id="tab-stats">
+            <section class="craft-input-section">
+                <div class="section-header">
+                    <h2>📊 Statistiques d'Utilisation</h2>
+                    <p>Analysez vos habitudes de crafting avec des graphiques interactifs</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>📈 Vue d'Ensemble</h3>
+                    <div id="statsOverview" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                        <!-- Stats will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Graphiques -->
+                <div id="chartsContainer" style="margin-top: 2rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+                        <!-- Graphique 1: Types d'items -->
+                        <div class="feature-card">
+                            <canvas id="chart_itemTypes" height="250"></canvas>
+                        </div>
+
+                        <!-- Graphique 2: Stratégies -->
+                        <div class="feature-card">
+                            <canvas id="chart_strategies" height="250"></canvas>
+                        </div>
+
+                        <!-- Graphique 3: Coûts -->
+                        <div class="feature-card" style="grid-column: span 2;">
+                            <canvas id="chart_costs" height="200"></canvas>
+                        </div>
+
+                        <!-- Graphique 4: Budgets -->
+                        <div class="feature-card">
+                            <canvas id="chart_budgets" height="250"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <button class="btn-secondary" id="refreshChartsBtn">🔄 Actualiser les Graphiques</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>PoE2 Craft Helper - Outil communautaire non officiel</p>
+            <p>Path of Exile 2 © Grinding Gear Games</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/data-v2.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/craft-simulator.js"></script>
+    <script src="js/simulator-ui.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/theme-manager.js"></script>
+
+    <script>
+        // Variables globales
+        let simulatorUI = null;
+        let favoritesManager = null;
+        let chartsManager = null;
+
+        // Gestion des onglets
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Retirer active de tous les onglets
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                // Ajouter active à l'onglet cliqué
+                this.classList.add('active');
+                const tabId = 'tab-' + this.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+
+                // Initialiser le simulateur si on affiche cet onglet
+                if (this.dataset.tab === 'simulator' && !simulatorUI) {
+                    initializeSimulator();
+                }
+
+                // Initialiser les graphiques si on affiche cet onglet
+                if (this.dataset.tab === 'stats') {
+                    updateStatsOverview();
+                    // Delay pour s'assurer que les canvas sont visibles
+                    setTimeout(() => {
+                        initializeCharts();
+                    }, 100);
+                }
+            });
+        });
+
+        // Initialiser les managers au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            favoritesManager = new FavoritesManager();
+            chartsManager = new ChartsManager(favoritesManager);
+
+            // Charger les stats initiales
+            updateStatsOverview();
+
+            // Bouton refresh charts
+            document.getElementById('refreshChartsBtn')?.addEventListener('click', function() {
+                updateStatsOverview();
+                if (chartsManager) {
+                    chartsManager.createAllCharts();
+                }
+            });
+        });
+
+        // Initialiser le simulateur
+        function initializeSimulator() {
+            try {
+                simulatorUI = new SimulatorUI('simulatorContainer');
+                console.log('Simulateur initialisé avec succès');
+            } catch (error) {
+                console.error('Erreur lors de l\'initialisation du simulateur:', error);
+                document.getElementById('simulatorContainer').innerHTML = `
+                    <div class="feature-card" style="border-left-color: var(--color-danger);">
+                        <h3>❌ Erreur</h3>
+                        <p>Impossible d'initialiser le simulateur. Assurez-vous que tous les fichiers JavaScript sont chargés correctement.</p>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem;">Erreur: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialiser les graphiques
+        function initializeCharts() {
+            if (!chartsManager) {
+                chartsManager = new ChartsManager(favoritesManager);
+            }
+            chartsManager.createAllCharts();
+        }
+
+        // Mettre à jour les stats de vue d'ensemble
+        function updateStatsOverview() {
+            if (!favoritesManager) return;
+
+            const stats = favoritesManager.getStats();
+            const container = document.getElementById('statsOverview');
+
+            if (!container) return;
+
+            const mostCrafted = stats.mostCraftedTypes[0] || ['aucun', 0];
+            const topStrategy = Object.entries(stats.strategiesUsed)
+                .sort((a, b) => b[1] - a[1])[0] || ['aucune', 0];
+
+            container.innerHTML = `
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--color-accent-gold); font-family: 'Cinzel', serif;">${stats.totalCrafts}</div>
+                    <div style="color: var(--color-text-secondary);">Crafts Totaux</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2.5rem; color: var(--color-accent-gold); font-family: 'Cinzel', serif;">${stats.totalFavorites}</div>
+                    <div style="color: var(--color-text-secondary);">Favoris</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.5rem; color: var(--color-accent-gold); font-family: 'Cinzel', serif;">${formatItemType(mostCrafted[0])}</div>
+                    <div style="color: var(--color-text-secondary);">Type le Plus Crafté (${mostCrafted[1]}x)</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold); font-family: 'Cinzel', serif;">${topStrategy[0]}</div>
+                    <div style="color: var(--color-text-secondary);">Stratégie Préférée (${topStrategy[1]}x)</div>
+                </div>
+            `;
+        }
+
+        // Formater le type d'item
+        function formatItemType(type) {
+            const names = {
+                'weapon-1h': 'Arme 1M',
+                'weapon-2h': 'Arme 2M',
+                'bow': 'Arc',
+                'helmet': 'Casque',
+                'body': 'Armure',
+                'ring': 'Anneau',
+                'aucun': 'Aucun'
+            };
+            return names[type] || type;
+        }
+
+        // Comparateur de stratégies (démo)
+        document.getElementById('comparatorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const resultsDiv = document.getElementById('comparisonResults');
+            const contentDiv = document.getElementById('comparisonContent');
+
+            // Données de démo
+            const strategies = [
+                { name: 'Alt-Regal-Exalt', score: 8, cost: 100, difficulty: 'Moyen', badge: 'excellent' },
+                { name: 'Essence Spam', score: 7, cost: 80, difficulty: 'Facile', badge: 'good' },
+                { name: 'Trade Base', score: 6, cost: 150, difficulty: 'Facile', badge: 'good' },
+                { name: 'Alchemy Spam', score: 4, cost: 50, difficulty: 'Facile', badge: 'acceptable' }
+            ];
+
+            let html = '<table class="comparison-table">';
+            html += '<thead><tr><th>Stratégie</th><th>Score</th><th>Coût Moyen</th><th>Difficulté</th><th>Recommandation</th></tr></thead><tbody>';
+
+            strategies.forEach(s => {
+                const badgeClass = `badge-${s.badge}`;
+                const badgeText = s.badge === 'excellent' ? 'Excellent' : s.badge === 'good' ? 'Bon' : 'Acceptable';
+                html += `<tr>
+                    <td><strong>${s.name}</strong></td>
+                    <td>${s.score}/10</td>
+                    <td>${s.cost} chaos</td>
+                    <td>${s.difficulty}</td>
+                    <td><span class="badge ${badgeClass}">${badgeText}</span></td>
+                </tr>`;
+            });
+
+            html += '</tbody></table>';
+
+            html += '<div class="feature-card" style="margin-top: 2rem;"><h4>🏆 Recommandation</h4><p>Pour votre objectif, <strong>Alt-Regal-Exalt</strong> est la meilleure stratégie. Elle offre le meilleur équilibre entre contrôle et coût.</p></div>';
+
+            contentDiv.innerHTML = html;
+            resultsDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

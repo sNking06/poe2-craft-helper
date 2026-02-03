@@ -1,0 +1,192 @@
+/* Icônes de Currency pour PoE2 Craft Helper
+ * Icônes CSS/SVG stylisées inspirées de Path of Exile 2
+ */
+
+.currency-icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.currency-icon-small {
+    width: 24px;
+    height: 24px;
+}
+
+.currency-icon-large {
+    width: 64px;
+    height: 64px;
+}
+
+/* Orb of Transmutation - Bleu */
+.currency-transmutation {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="transmute-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%234169e1;stop-opacity:1" /><stop offset="100%" style="stop-color:%231e3a7a;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23transmute-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%238ab4f8" stroke-width="2" opacity="0.6"/><circle cx="50" cy="50" r="25" fill="none" stroke="%238ab4f8" stroke-width="1.5" opacity="0.4"/><path d="M50 20 L60 40 L50 35 L40 40 Z" fill="%23ffffff" opacity="0.9"/><path d="M50 80 L60 60 L50 65 L40 60 Z" fill="%23ffffff" opacity="0.9"/><path d="M20 50 L40 40 L35 50 L40 60 Z" fill="%23ffffff" opacity="0.9"/><path d="M80 50 L60 40 L65 50 L60 60 Z" fill="%23ffffff" opacity="0.9"/></svg>');
+}
+
+/* Orb of Alteration - Jaune/Or */
+.currency-alteration {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="alt-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ffd700;stop-opacity:1" /><stop offset="100%" style="stop-color:%23b8860b;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23alt-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ffeb3b" stroke-width="2" opacity="0.6"/><path d="M30 50 Q40 30, 50 30 Q60 30, 70 50 Q60 70, 50 70 Q40 70, 30 50 Z" fill="none" stroke="%23ffffff" stroke-width="2.5" opacity="0.8"/><circle cx="50" cy="50" r="12" fill="%23ffffff" opacity="0.9"/></svg>');
+}
+
+/* Orb of Augmentation - Vert */
+.currency-augmentation {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="aug-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%2342f545;stop-opacity:1" /><stop offset="100%" style="stop-color:%23228b22;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23aug-grad)" stroke="%23ffffff" stroke-width="3"/><path d="M50 25 L50 75 M25 50 L75 50" stroke="%23ffffff" stroke-width="4" opacity="0.9"/><circle cx="50" cy="50" r="30" fill="none" stroke="%2390ee90" stroke-width="2" opacity="0.6"/></svg>');
+}
+
+/* Regal Orb - Violet/Royal */
+.currency-regal {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="regal-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%239370db;stop-opacity:1" /><stop offset="100%" style="stop-color:%234b0082;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23regal-grad)" stroke="%23ffd700" stroke-width="3"/><path d="M50 20 L35 35 L45 50 L35 65 L50 80 L65 65 L55 50 L65 35 Z" fill="%23ffd700" opacity="0.8"/><circle cx="50" cy="50" r="15" fill="%23ffffff" opacity="0.6"/></svg>');
+}
+
+/* Orb of Alchemy - Rouge */
+.currency-alchemy {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="alch-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ff6b6b;stop-opacity:1" /><stop offset="100%" style="stop-color:%23c92a2a;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23alch-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ff9999" stroke-width="2" opacity="0.6"/><path d="M50 30 L40 45 L30 50 L40 55 L50 70 L60 55 L70 50 L60 45 Z" fill="%23ffffff" opacity="0.9"/></svg>');
+}
+
+/* Exalted Orb - Or brillant */
+.currency-exalted {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="ex-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ffe135;stop-opacity:1" /><stop offset="100%" style="stop-color:%23d4af37;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23ex-grad)" stroke="%23ffffff" stroke-width="4"/><path d="M50 15 L55 35 L75 35 L60 48 L68 68 L50 55 L32 68 L40 48 L25 35 L45 35 Z" fill="%23ffffff" opacity="0.95"/><circle cx="50" cy="50" r="10" fill="%23d4af37"/></svg>');
+}
+
+/* Orb of Scouring - Gris/Blanc */
+.currency-scouring {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="scour-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23e0e0e0;stop-opacity:1" /><stop offset="100%" style="stop-color:%23757575;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23scour-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ffffff" stroke-width="2" opacity="0.7"/><path d="M35 35 L65 65 M65 35 L35 65" stroke="%23ffffff" stroke-width="4" opacity="0.9"/></svg>');
+}
+
+/* Essence - Violet avec particules */
+.currency-essence {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="essence-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23a78bfa;stop-opacity:1" /><stop offset="100%" style="stop-color:%236366f1;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23essence-grad)" stroke="%23c4b5fd" stroke-width="3"/><circle cx="30" cy="30" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="70" cy="30" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="30" cy="70" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="70" cy="70" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="50" cy="25" r="2" fill="%23ffffff" opacity="0.7"/><circle cx="50" cy="75" r="2" fill="%23ffffff" opacity="0.7"/><circle cx="25" cy="50" r="2" fill="%23ffffff" opacity="0.7"/><circle cx="75" cy="50" r="2" fill="%23ffffff" opacity="0.7"/><path d="M50 35 L50 65" stroke="%23ffffff" stroke-width="2.5" opacity="0.8"/><path d="M35 50 L65 50" stroke="%23ffffff" stroke-width="2.5" opacity="0.8"/></svg>');
+}
+
+/* Chaos Orb - Orange/Rouge (currency) */
+.currency-chaos {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="chaos-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ff8c42;stop-opacity:1" /><stop offset="100%" style="stop-color:%23ff3c38;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23chaos-grad)" stroke="%23ffd43b" stroke-width="3"/><path d="M30 40 Q50 20, 70 40 Q50 60, 30 40 Z" fill="none" stroke="%23ffffff" stroke-width="2.5" opacity="0.9"/><path d="M30 60 Q50 80, 70 60 Q50 40, 30 60 Z" fill="none" stroke="%23ffffff" stroke-width="2.5" opacity="0.9"/></svg>');
+}
+
+/* Orb of Annulment - Noir/Rouge */
+.currency-annulment {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="annul-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23363636;stop-opacity:1" /><stop offset="100%" style="stop-color:%23000000;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23annul-grad)" stroke="%23ff0000" stroke-width="3"/><circle cx="50" cy="50" r="30" fill="none" stroke="%23ff6b6b" stroke-width="2" opacity="0.6"/><circle cx="50" cy="50" r="20" fill="none" stroke="%23ff0000" stroke-width="3" stroke-dasharray="5,3"/></svg>');
+}
+
+/* Divine Orb - Blanc/Doré */
+.currency-divine {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="divine-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:1" /><stop offset="100%" style="stop-color:%23d4af37;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23divine-grad)" stroke="%23ffd700" stroke-width="4"/><path d="M50 25 L53 45 L73 45 L58 57 L63 77 L50 65 L37 77 L42 57 L27 45 L47 45 Z" fill="%23ffd700" stroke="%23ffffff" stroke-width="1.5"/></svg>');
+}
+
+/* Vaal Orb - Rouge sombre */
+.currency-vaal {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="vaal-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%238b0000;stop-opacity:1" /><stop offset="100%" style="stop-color:%23450000;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23vaal-grad)" stroke="%23ff0000" stroke-width="3"/><path d="M50 20 L40 40 L50 45 L60 40 Z" fill="%23ff0000" opacity="0.9"/><path d="M50 80 L40 60 L50 55 L60 60 Z" fill="%23ff0000" opacity="0.9"/><path d="M20 50 L40 40 L45 50 L40 60 Z" fill="%23ff0000" opacity="0.9"/><path d="M80 50 L60 40 L55 50 L60 60 Z" fill="%23ff0000" opacity="0.9"/><circle cx="50" cy="50" r="8" fill="%23ffffff"/></svg>');
+}
+
+/* Animation de brillance */
+@keyframes currency-glow {
+    0%, 100% { filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) brightness(1); }
+    50% { filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.6)) brightness(1.2); }
+}
+
+.currency-icon:hover {
+    animation: currency-glow 1.5s ease-in-out infinite;
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Styles pour les boutons d'orbs dans le simulateur */
+.orb-button .orb-icon {
+    font-size: 0;
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+
+.orb-button[data-orb="transmutation"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="transmute-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%234169e1;stop-opacity:1" /><stop offset="100%" style="stop-color:%231e3a7a;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23transmute-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%238ab4f8" stroke-width="2" opacity="0.6"/><circle cx="50" cy="50" r="25" fill="none" stroke="%238ab4f8" stroke-width="1.5" opacity="0.4"/><path d="M50 20 L60 40 L50 35 L40 40 Z" fill="%23ffffff" opacity="0.9"/><path d="M50 80 L60 60 L50 65 L40 60 Z" fill="%23ffffff" opacity="0.9"/><path d="M20 50 L40 40 L35 50 L40 60 Z" fill="%23ffffff" opacity="0.9"/><path d="M80 50 L60 40 L65 50 L60 60 Z" fill="%23ffffff" opacity="0.9"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.orb-button[data-orb="alteration"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="alt-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ffd700;stop-opacity:1" /><stop offset="100%" style="stop-color:%23b8860b;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23alt-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ffeb3b" stroke-width="2" opacity="0.6"/><path d="M30 50 Q40 30, 50 30 Q60 30, 70 50 Q60 70, 50 70 Q40 70, 30 50 Z" fill="none" stroke="%23ffffff" stroke-width="2.5" opacity="0.8"/><circle cx="50" cy="50" r="12" fill="%23ffffff" opacity="0.9"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.orb-button[data-orb="augmentation"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="aug-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%2342f545;stop-opacity:1" /><stop offset="100%" style="stop-color:%23228b22;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23aug-grad)" stroke="%23ffffff" stroke-width="3"/><path d="M50 25 L50 75 M25 50 L75 50" stroke="%23ffffff" stroke-width="4" opacity="0.9"/><circle cx="50" cy="50" r="30" fill="none" stroke="%2390ee90" stroke-width="2" opacity="0.6"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.orb-button[data-orb="regal"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="regal-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%239370db;stop-opacity:1" /><stop offset="100%" style="stop-color:%234b0082;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23regal-grad)" stroke="%23ffd700" stroke-width="3"/><path d="M50 20 L35 35 L45 50 L35 65 L50 80 L65 65 L55 50 L65 35 Z" fill="%23ffd700" opacity="0.8"/><circle cx="50" cy="50" r="15" fill="%23ffffff" opacity="0.6"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.orb-button[data-orb="alchemy"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="alch-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ff6b6b;stop-opacity:1" /><stop offset="100%" style="stop-color:%23c92a2a;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23alch-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ff9999" stroke-width="2" opacity="0.6"/><path d="M50 30 L40 45 L30 50 L40 55 L50 70 L60 55 L70 50 L60 45 Z" fill="%23ffffff" opacity="0.9"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.orb-button[data-orb="exalted"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="ex-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ffe135;stop-opacity:1" /><stop offset="100%" style="stop-color:%23d4af37;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23ex-grad)" stroke="%23ffffff" stroke-width="4"/><path d="M50 15 L55 35 L75 35 L60 48 L68 68 L50 55 L32 68 L40 48 L25 35 L45 35 Z" fill="%23ffffff" opacity="0.95"/><circle cx="50" cy="50" r="10" fill="%23d4af37"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.orb-button[data-orb="scouring"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="scour-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23e0e0e0;stop-opacity:1" /><stop offset="100%" style="stop-color:%23757575;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23scour-grad)" stroke="%23ffffff" stroke-width="3"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23ffffff" stroke-width="2" opacity="0.7"/><path d="M35 35 L65 65 M65 35 L35 65" stroke="%23ffffff" stroke-width="4" opacity="0.9"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.orb-button[data-orb="essence"] .orb-icon::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="essence-grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23a78bfa;stop-opacity:1" /><stop offset="100%" style="stop-color:%236366f1;stop-opacity:1" /></radialGradient></defs><circle cx="50" cy="50" r="45" fill="url(%23essence-grad)" stroke="%23c4b5fd" stroke-width="3"/><circle cx="30" cy="30" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="70" cy="30" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="30" cy="70" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="70" cy="70" r="3" fill="%23ffffff" opacity="0.9"/><circle cx="50" cy="25" r="2" fill="%23ffffff" opacity="0.7"/><circle cx="50" cy="75" r="2" fill="%23ffffff" opacity="0.7"/><circle cx="25" cy="50" r="2" fill="%23ffffff" opacity="0.7"/><circle cx="75" cy="50" r="2" fill="%23ffffff" opacity="0.7"/><path d="M50 35 L50 65" stroke="%23ffffff" stroke-width="2.5" opacity="0.8"/><path d="M35 50 L65 50" stroke="%23ffffff" stroke-width="2.5" opacity="0.8"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
